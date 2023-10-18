@@ -4,7 +4,7 @@ public class PigLatinConverter {
 
     public String convertToPigLatin(String text){
         String[] words = text.split(" ");
-        String pigSentence = "";
+        String pigSentence = "asf";
 
         return pigSentence;
     }
