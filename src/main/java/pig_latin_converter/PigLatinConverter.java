@@ -30,10 +30,14 @@ public class PigLatinConverter {
         return result;
     }
 
-
     public String swapConsonants(String text){
         String beginning = text.replaceAll(".*?([aeiouAEIOU].*)", "$1");
         String end = text.replaceAll("([^aeiouAEIOU]*).*", "$1");
         return beginning + end + "ay";
+    }
+
+    public String capitalizeFirstLetter(String text){
+        text = text.substring(0, 1).toUpperCase() + text.substring(1);
+        return text;
     }
 }
