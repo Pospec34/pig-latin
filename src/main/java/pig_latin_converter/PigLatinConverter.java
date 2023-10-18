@@ -7,10 +7,12 @@ public class PigLatinConverter {
         String pigSentence = "";
 
         for (String word : words){
+            String punctuation = getPunctuation(word);
+            word = word.replaceAll("[^a-zA-Z]+", "");
             if (startsWithVowel(word)){
-                pigSentence += word + "ay";
+                pigSentence += word + "ay" + punctuation + " ";
             } else {
-                pigSentence += swapConsonants(word);
+                pigSentence += swapConsonants(word) + punctuation + " ";
             }
         }
         pigSentence = capitalizeFirstLetter(pigSentence);
@@ -39,5 +41,13 @@ public class PigLatinConverter {
     public String capitalizeFirstLetter(String text){
         text = text.substring(0, 1).toUpperCase() + text.substring(1);
         return text;
+    }
+
+    public String getPunctuation(String text){
+        if (text.matches(".*[.,!?]+$")){
+            return text.replaceAll(".*([.,!?]+$)", "$1");
+        } else {
+            return "";
+        }
     }
 }
