@@ -9,11 +9,23 @@ public class PigLatinConverter {
         return pigSentence;
     }
 
+    /**
+     *
+     * @param text
+     * @return returns true if text starts with vowel
+     */
     public boolean startsWithVowel(String text){
         boolean result = false;
         if (text.matches("^[aeiouAEIOU].*")){
             result = true;
         }
         return result;
+    }
+
+
+    public String swapConsonants(String text){
+        String beginning = text.replaceAll(".*?([aeiouAEIOU].*)", "$1");
+        String end = text.replaceAll("([^aeiouAEIOU]*).*", "$1");
+        return beginning + end + "ay";
     }
 }
