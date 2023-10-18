@@ -13,7 +13,7 @@ public class PigLatinConverter {
                 pigSentence += swapConsonants(word);
             }
         }
-
+        pigSentence = capitalizeFirstLetter(pigSentence);
         return pigSentence;
     }
 

@@ -8,7 +8,7 @@ public class Main {
         PigLatinConverter converter = new PigLatinConverter();
 
         System.out.println("Zadejte anglický text k převedení do Pig Latin: ");
-        String text = scanner.nextLine();
+        String text = scanner.nextLine().toLowerCase();
 
         System.out.println(converter.convertToPigLatin(text));
 
