@@ -4,7 +4,15 @@ public class PigLatinConverter {
 
     public String convertToPigLatin(String text){
         String[] words = text.split(" ");
-        String pigSentence = "asf";
+        String pigSentence = "";
+
+        for (String word : words){
+            if (startsWithVowel(word)){
+                pigSentence += word + "ay";
+            } else {
+                pigSentence += swapConsonants(word);
+            }
+        }
 
         return pigSentence;
     }
