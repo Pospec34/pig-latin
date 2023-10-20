@@ -25,11 +25,7 @@ public class PigLatinConverter {
      * @return returns true if text starts with vowel
      */
     public boolean startsWithVowel(String text){
-        boolean result = false;
-        if (text.matches("^[aeiouAEIOU].*")){
-            result = true;
-        }
-        return result;
+        return text.matches("^[aeiouAEIOU].*");
     }
 
     public String swapConsonants(String text){
