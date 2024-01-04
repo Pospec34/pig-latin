@@ -7,9 +7,14 @@ public class Main {
         var scanner = new Scanner(System.in, "UTF-8");
         PigLatinConverter converter = new PigLatinConverter();
 
-        System.out.println("Zadejte anglický text k převedení do Pig Latin: ");
-        String text = scanner.nextLine();
-
-        System.out.println(converter.convertToPigLatin(text));
+        while (true){
+            System.out.println("Zadejte anglický text k převedení do Pig Latin. Číslo '0' program ukončí: ");
+            String text = scanner.nextLine();
+            if (text.equals("0")){
+                System.out.println("Na shledanou!");
+                break;
+            }
+            System.out.println(converter.convertToPigLatin(text));
+        }
     }
 }
